@@ -1,11 +1,13 @@
-const path = require("path")
+const path = require("path");
 
 module.exports = {
   entry: "./src/main.js",
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "./build")
+    path: path.resolve(__dirname, "./build"),
   },
+  mode: "development",
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -14,12 +16,12 @@ module.exports = {
         use: [
           // {
           //   loader: "css-loader",
-            // options: {}
+          // options: {}
           // },
           "style-loader",
-          "css-loader"
-        ]
-      }
-    ]
-  }
-}
+          "css-loader",
+        ],
+      },
+    ],
+  },
+};
