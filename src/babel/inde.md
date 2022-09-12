@@ -98,3 +98,32 @@
   "type-check": "tsc --noEmit" // --noEmit没有输出 不会多出文件
   // "type-check-watch": "tsc --noEmit --warch" // 实时监听ts文件状态
 ```
+
+#### ESLint(静态代码分析工具：提示错误或者警告)
+
+eslint --init
+
+```js
+ {
+  rules:  {
+    // 0-off 1-warn 2-error
+    // "no-unused-vars": 0
+    "no-unused-vars": 'off',
+    "quotes": [
+      "error",
+      "double"
+    ]
+  }
+ }
+
+```
+
+#### prettier(帮助我们自动修复)
+
+```js
+//  .prettierrc
+{
+  "priteWidth": 40 // 超过xx换行
+  "singleQuote": true,
+}
+```
