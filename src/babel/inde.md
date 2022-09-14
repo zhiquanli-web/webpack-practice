@@ -4,6 +4,8 @@
 
 @babel/preset-env
 
+babel-loader
+
 #### polyfill
 
 ```js
