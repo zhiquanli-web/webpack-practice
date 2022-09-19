@@ -1,5 +1,4 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   // context: path.resolve(__dirname, "."),
@@ -20,18 +19,9 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.md$/i,
-        use: ["symd-loader"],
-      },
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
     ],
   },
   resolveLoader: {
     modules: ["node_modules", "./sy-loader"],
   },
-  plugins: [new HtmlWebpackPlugin()],
 };

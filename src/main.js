@@ -1,3 +1,5 @@
+import code from "./doc.md";
+import "highlight.js/styles/default.css";
 console.log("hello world");
 
 const foo = () => {
@@ -5,3 +7,5 @@ const foo = () => {
 };
 
 foo();
+
+document.body.innerHTML = code;
