@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/zhiquanli-web/webpack-practice#readme",
   "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
     "loader-utils": "^2.0.2",
     "schema-utils": "^4.0.0",
     "webpack": "^5.74.0",

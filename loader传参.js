@@ -13,15 +13,17 @@ module.exports = {
       {
         test: /\.js$/i,
         use: {
-          loader: "sybable-loader",
+          loader: "sy-loader02",
           options: {
-            presets: ["@babel/preset-env"],
+            // 传参要接收参数需要loader-utils这个库
+            name: "sy",
+            age: 18,
           },
-        },
+        }, // 这里的相对路径相对于context
       },
     ],
   },
   resolveLoader: {
-    modules: ["node_modules", "./sy-loader"],
+    modules: ["node_modules", "./sy-loader"], // loader路径查找问题 默认为node_modules
   },
 };
