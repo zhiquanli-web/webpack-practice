@@ -1,8 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const AutoUploadPlugin = require("./sy-plugin/AutoUploadPlugin");
 module.exports = {
-  // context: path.resolve(__dirname, "."),
   mode: "development",
   entry: "./src/main.js",
   output: {
@@ -10,28 +9,18 @@ module.exports = {
     path: path.resolve(__dirname, "./build"),
   },
   module: {
-    rules: [
-      {
-        test: /\.js$/i,
-        use: {
-          loader: "sybable-loader",
-          options: {
-            presets: ["@babel/preset-env"],
-          },
-        },
-      },
-      {
-        test: /\.md$/i,
-        use: ["symd-loader"],
-      },
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
-    ],
+    rules: [],
   },
   resolveLoader: {
     modules: ["node_modules", "./sy-loader"],
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new AutoUploadPlugin({
+      host: "123.204.16.16",
+      username: "root",
+      password: "",
+      remotePath: "/root/path",
+    }),
+  ],
 };
